@@ -51,17 +51,15 @@
 
 */
 
-/**
- * Define a function named `yelling` that takes an array of
- * strings as an argument and returns a new array with all
- * the words forced to uppercase
- *
- * Example:
- *
- * const yelling = (array) => {
- *    // your code here
- * }
- */
+// Define a function named `yelling` that takes an array of
+// strings as an argument and returns a new array with all
+// the words forced to uppercase
+
+// Example:
+
+const yelling = array => {
+  return array.map(word => word.toUpperCase())
+}
 
 // ...
 
@@ -72,7 +70,9 @@
  * the numbers multiplied by 2
  */
 
-// ...
+const doubleTrouble = numbers => {
+  return numbers.map(number => number * 2)
+}
 
 /*
  * Define a function stringyIndexes() that takes an array of
@@ -80,21 +80,31 @@
  * suffixed with " is at index X" where X is the index of the element
  */
 
-// ...
+const stringyIndexes = strings => {
+  return strings.map((string, index) => `${string} is at index ${index}`)
+}
 
 /*
  * Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
 
-// ...
+const onlyTheEvenSurvive = numbers => {
+  return numbers.filter(number => number % 2 === 0)
+}
 
 /*
  * Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
-// ...
+const onlyTheEvenIndexedSurvive = numbers => {
+  return numbers.filter((number, index) => {
+    if (index % 2 === 0) {
+      return number
+    }
+  })
+}
 
 /*
  * Define a function bestMoviesOfTheYear that accepts an array of
@@ -110,7 +120,12 @@
  * }
  */
 
-// ...
+const bestMoviesOfTheYear = (movies, year) => {
+  let bestMovies = movies.filter(
+    movie => movie.year === year && movie.score > 90
+  )
+  return bestMovies.map(best => best.name)
+}
 
 /*
  * Define a function everyoneIsOdd that accepts an array of
@@ -118,7 +133,9 @@
  * odd.
  */
 
-// ...
+const everyoneIsOdd = numbers => {
+  return numbers.every(number => number % 2 === 1)
+}
 
 /*
  * Define a function findTheNeedle that accepts an array of
@@ -126,7 +143,10 @@
  * `needle` inside
  */
 
-// ...
+const findTheNeedle = strings => {
+  let found = strings.filter(string => string.includes('needle'))
+  return found[0]
+}
 
 /*
  * Define a function findTheNeedleIndex that accepts an array of
@@ -134,7 +154,9 @@
  *  the word `needle` inside
  */
 
-// ...
+const findTheNeedleIndex = strings => {
+  return strings.findIndex(string => string.includes('needle'))
+}
 
 /*
  * Define a function someoneToLove that accepts an array of
@@ -142,7 +164,9 @@
  * four characters long
  */
 
-// ...
+const someoneToLove = strings => {
+  return strings.some(string => string.length === 4)
+}
 
 /*
  * Define a function mapYourself that accepts an array of
@@ -153,7 +177,13 @@
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+const mapYourself = numbers => {
+  let double = []
+  for (let i = 0; i < numbers.length; i++) {
+    double.push(numbers[i] * 2)
+  }
+  return double
+}
 
 /*
  * Define a function filterYourself that accepts an
@@ -165,7 +195,15 @@
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+const filterYourself = numbers => {
+  let filtered = []
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      filtered.push(numbers[i])
+    }
+  }
+  return filtered
+}
 
 /*
  * Define a function everyYourself that accepts an
@@ -177,7 +215,15 @@
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+const everyYourself = numbers => {
+  let isEven = true
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 1) {
+      isEven = false
+    }
+  }
+  return isEven
+}
 
 /**
  * NOTE: Don't modify anything below this line...
